@@ -1,0 +1,34 @@
+{
+  "name": "nae-symfony-bundles/nae-rest",
+  "type": "symfony-bundle",
+  "description": "Symfony NAE rest Bundle",
+  "keywords": [
+    "nae",
+    "symfony",
+    "bundle"
+  ],
+  "homepage": "https://newageerp.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Arturas Jegorenkovas",
+      "email": "info@newageerp.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "NaeSymfonyBundles\\NaeRestBundle\\": ""
+    }
+  },
+  "require": {
+    "php": "^7.3",
+    "symfony/framework-bundle": "^5.0",
+    "ext-json": "*",
+    "symfony/orm-pack": "^2.0",
+    "nae-symfony-bundles/nae-auth": "^0.0.1"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-master",
+    "symfony/maker-bundle": "^1.23"
+  }
+}
