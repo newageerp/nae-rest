@@ -35,7 +35,12 @@ class <?= $class_name ?> extends <?= $parent_class_name; ?><?= "\n" ?>
 
             $element = new <?=$entity_class_name?>();
 
-            // TODO set params
+            $queryData = $request->request->all();
+
+            foreach ($queryData as $key => $val) {
+                $method = 'set' . lcfirst($key);
+                $element->$method($val);
+            }
 
             $entityManager->persist($element);
             $entityManager->flush();

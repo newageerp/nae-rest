@@ -46,7 +46,12 @@ class <?= $class_name ?> extends NaeTokenAuthController<?= "\n" ?>
             $element = new <?=$entity_class_name?>();
             $element->setUser($user);
 
-            // TODO set params
+            $queryData = $request->request->all();
+
+            foreach ($queryData as $key => $val) {
+                $method = 'set' . lcfirst($key);
+                $element->$method($val);
+            }
 
             $entityManager->persist($element);
             $entityManager->flush();
@@ -177,7 +182,6 @@ class <?= $class_name ?> extends NaeTokenAuthController<?= "\n" ?>
                 $method = 'set' . lcfirst($key);
                 $element->$method($val);
             }
-            // TODO set params
 
             $entityManager->persist($element);
             $entityManager->flush();
